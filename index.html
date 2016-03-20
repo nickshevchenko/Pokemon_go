@@ -2,7 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<title>Pokemon GO</title>
+
+<script type="text/javascript">
+
+	$.get("http://pokeapi.co/api/v2/pokemon/1/", function (data){
+	$( "h1" ).html( data.name );
+  	console.log(data);
+	});
+
+</script>
+
 </head>
 <body>
 <h2>Pokemon GO</h2>
