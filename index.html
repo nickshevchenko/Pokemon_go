@@ -4,18 +4,12 @@
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <title>Pokemon GO</title>
-
 <script type="text/javascript">
-
 	$.get("http://pokeapi.co/api/v2/pokemon/1/", function (data){
 	$(".pokemon-name").html(data.name);
   	console.log(data);
 	});
-
-	
-
 </script>
-
 <style type="text/css">
 	.form{
 	    border: 2px solid black;
@@ -29,25 +23,20 @@
   		border: 2px solid black;
 	    width: 500px;
 	    height: 80px;
-	    
 	    left: 40%;
-
   	}
   	.holder{
   		display: inline;
   		float: left;
   	}
-
   	.row{
   		content: "";
   		display: table;
   		clear: both;
-
   	}
   	.grid{
   		float: none;
   		margin: auto;
-
   	}
   	.profile{
   		border: 3px solid black;
@@ -68,17 +57,14 @@
   		height: 50%;
   		margin: 9px;
   		border: 0px;
-  		
   	}
   	.abilities{
   		float: left;
-  		
   		width: 180px;
   		height: 50px;
   		margin: 20px 9px 9px 9px;
   	}
   	.pokemon-name{
-  		
   		width: 180px;
   		height: 30px;
   		margin: 9px;
@@ -100,7 +86,6 @@
   		margin: 9px;
   	}
   	.abilities-profile{
-  		
   		border: 1px solid black;
   		width: 280px;
   		height: 50px;
@@ -110,220 +95,187 @@
   		text-align: center;
   		font-size: 50px;
   		margin: 7px;
-
+  	}
+  	.button{
+  		float: left;
+  		position: absolute;
+  		margin: -30px 0 60px 30px;
+  	}
+  	.load-more{
+  		background-color: #008CBA;
+  		border-radius: 4px;
+  		border: none;
+    	color: white;
+  		padding: 12px 300px;
+    	text-align: center;
+     	text-decoration: none;
+    	display: inline-block;
+    	font-size: 16px;
   	}
 </style>
-
 </head>
 <body>
 <div class="title">
 	<article>Pokedex</article>
 </div>
-
 <div class="grid">
-
-
-
-<div class="col-0-5">
-	<div>
-		<div class="row">
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/1.png" style="margin: 0 30px 30px 30px;">
+	<div class="col-0-5">
+		<div>
+			<div class="row">
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/1.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">
+						</div>
+						<div class="abilities">
+						</div>
 					</div>
-					<div class="pokemon-name">
-						
+				</div>
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/2.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">
+						</div>
+						<div class="abilities">
+						</div>
 					</div>
-					<div class="abilities">
-						
+				</div>
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/3.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">					
+						</div>
+						<div class="abilities">
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/2.png" style="margin: 0 30px 30px 30px;">
+			<div class="row">
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/4.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">						
+						</div>
+						<div class="abilities">						
+						</div>
 					</div>
-					<div class="pokemon-name">
-						
+				</div>
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/5.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">						
+						</div>
+						<div class="abilities">						
+						</div>
 					</div>
-					<div class="abilities">
-						
+				</div>
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/6.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">						
+						</div>
+						<div class="abilities">						
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/3.png" style="margin: 0 30px 30px 30px;">
+			<div class="row">
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/7.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">					
+						</div>
+						<div class="abilities">				
+						</div>
 					</div>
-					<div class="pokemon-name">
-						
+				</div>
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/8.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">
+						</div>
+						<div class="abilities">
+						</div>
 					</div>
-					<div class="abilities">
-						
+				</div>
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/9.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">
+						</div>
+						<div class="abilities">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/10.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">
+						</div>
+						<div class="abilities">
+						</div>
+					</div>
+				</div>
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/11.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">
+						</div>
+						<div class="abilities">
+						</div>
+					</div>
+				</div>
+				<div class="holder">
+					<div class="form">
+						<div class="picture">
+							<img src="http://pokeapi.co/media/img/12.png" style="margin: 0 30px 30px 30px;">
+						</div>
+						<div class="pokemon-name">
+						</div>
+						<div class="abilities">
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<div class="row">
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/4.png" style="margin: 0 30px 30px 30px;">
-					</div>
-					<div class="pokemon-name">
-						
-					</div>
-					<div class="abilities">
-						
-					</div>
-				</div>
+			<div class="button">
+				<a href="" target="_blank" class="load-more">Load More</a>
 			</div>
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/5.png" style="margin: 0 30px 30px 30px;">
-					</div>
-					<div class="pokemon-name">
-						
-					</div>
-					<div class="abilities">
-						
-					</div>
-				</div>
+	</div>
+	<div class="col-0-5">
+		<div class="profile">
+			<div class="picture-profile">
 			</div>
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/6.png" style="margin: 0 30px 30px 30px;">
-					</div>
-					<div class="pokemon-name">
-						
-					</div>
-					<div class="abilities">
-						
-					</div>
-				</div>
+			<div class="pokemon-name-profile">
 			</div>
-		</div>
-
-		<div class="row">
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/7.png" style="margin: 0 30px 30px 30px;">
-					</div>
-					<div class="pokemon-name">
-						
-					</div>
-					<div class="abilities">
-						
-					</div>
-				</div>
-			</div>
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/8.png" style="margin: 0 30px 30px 30px;">
-					</div>
-					<div class="pokemon-name">
-						
-					</div>
-					<div class="abilities">
-						
-					</div>
-				</div>
-			</div>
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/9.png" style="margin: 0 30px 30px 30px;">
-					</div>
-					<div class="pokemon-name">
-						
-					</div>
-					<div class="abilities">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/10.png" style="margin: 0 30px 30px 30px;">
-					</div>
-					<div class="pokemon-name">
-						
-					</div>
-					<div class="abilities">
-						
-					</div>
-				</div>
-			</div>
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/11.png" style="margin: 0 30px 30px 30px;">
-					</div>
-					<div class="pokemon-name">
-						
-					</div>
-					<div class="abilities">
-						
-					</div>
-				</div>
-			</div>
-			<div class="holder">
-				<div class="form">
-					<div class="picture">
-						<img src="http://pokeapi.co/media/img/12.png" style="margin: 0 30px 30px 30px;">
-					</div>
-					<div class="pokemon-name">
-						
-					</div>
-					<div class="abilities">
-						
-					</div>
-				</div>
+			<div class="abilities-profile">
 			</div>
 		</div>
 	</div>
 </div>
-
-<div class="col-0-5">
-	<div class="profile">
-		
-		<div class="picture-profile">
-			
-		</div>
-		<div class="pokemon-name-profile">
-			
-		</div>
-		<div class="abilities-profile">
-			
-		</div>
-
-	</div>
-</div>
-
-</div>
-
-
-<!--
-
-
-<h1></h1>
-<p>Some text</p>
-<div class="form">
-	<div></div>
-</div>
-
--->
 </body>
 </html>
