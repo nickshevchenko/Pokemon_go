@@ -5,17 +5,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <title>Pokemon GO</title>
 <script type="text/javascript">
-	$.get("http://pokeapi.co/api/v2/pokemon/1/", function (data){
-	$(".pokemon-name").html(data.name);
-  	console.log(data);
+	$.get("http://pokeapi.co/api/v2/pokemon/?limit=12", function (data){
+	//$(".pokemon-name").html(data.name);
+  	//console.log(data);
+  	$.each(data.results, function(key, value){
+  	$("#pokemon-"+ (key+1)).html(value.name);
 	});
+  	});
 </script>
 <style type="text/css">
 	.form{
 	    border: 2px solid black;
 	    width: 200px;
 	    height: 300px;
-	    margin: 100px 20px 50px;
+	    margin: 0 20px 20px 0;
 	    background-color: #808080;
     }
   	.title{
@@ -36,7 +39,7 @@
   	}
   	.grid{
   		float: none;
-  		margin: auto;
+  		margin: 100px 0 0 50px;
   	}
   	.profile{
   		border: 3px solid black;
@@ -44,7 +47,6 @@
   		height: 650px;
   		position: fixed;
   		float: left;
-  		top: 190px;
   		background-color: #808080;
   	}
   	.col-0-5{
@@ -72,6 +74,9 @@
   		font-weight: bold;
   		padding-top: 6px;
   		float: left;
+  		font-size: 1.375em;
+  		font-family: Georgia, serif;
+  		text-transform: capitalize;
   	}
   	.picture-profile{
   		border: 1px solid black;
@@ -99,14 +104,14 @@
   	.button{
   		float: left;
   		position: absolute;
-  		margin: -30px 0 60px 30px;
+  		margin: 0 0 55px 0;
   	}
   	.load-more{
   		background-color: #008CBA;
   		border-radius: 4px;
   		border: none;
     	color: white;
-  		padding: 12px 300px;
+  		padding: 12px 290px;
     	text-align: center;
      	text-decoration: none;
     	display: inline-block;
@@ -127,7 +132,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/1.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">
+						<div class="pokemon-name" id="pokemon-1">
 						</div>
 						<div class="abilities">
 						</div>
@@ -138,7 +143,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/2.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">
+						<div class="pokemon-name" id="pokemon-2">
 						</div>
 						<div class="abilities">
 						</div>
@@ -149,7 +154,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/3.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">					
+						<div class="pokemon-name" id="pokemon-3">					
 						</div>
 						<div class="abilities">
 						</div>
@@ -162,7 +167,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/4.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">						
+						<div class="pokemon-name" id="pokemon-4">						
 						</div>
 						<div class="abilities">						
 						</div>
@@ -173,7 +178,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/5.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">						
+						<div class="pokemon-name" id="pokemon-5">						
 						</div>
 						<div class="abilities">						
 						</div>
@@ -184,7 +189,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/6.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">						
+						<div class="pokemon-name" id="pokemon-6">						
 						</div>
 						<div class="abilities">						
 						</div>
@@ -197,7 +202,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/7.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">					
+						<div class="pokemon-name" id="pokemon-7">					
 						</div>
 						<div class="abilities">				
 						</div>
@@ -208,7 +213,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/8.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">
+						<div class="pokemon-name" id="pokemon-8">
 						</div>
 						<div class="abilities">
 						</div>
@@ -219,7 +224,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/9.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">
+						<div class="pokemon-name" id="pokemon-9">
 						</div>
 						<div class="abilities">
 						</div>
@@ -232,7 +237,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/10.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">
+						<div class="pokemon-name" id="pokemon-10">
 						</div>
 						<div class="abilities">
 						</div>
@@ -243,7 +248,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/11.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">
+						<div class="pokemon-name" id="pokemon-11">
 						</div>
 						<div class="abilities">
 						</div>
@@ -254,7 +259,7 @@
 						<div class="picture">
 							<img src="http://pokeapi.co/media/img/12.png" style="margin: 0 30px 30px 30px;">
 						</div>
-						<div class="pokemon-name">
+						<div class="pokemon-name" id="pokemon-12">
 						</div>
 						<div class="abilities">
 						</div>
