@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<title>Pokemon GO</title>
-<script type="text/javascript">
-	$.get("http://pokeapi.co/api/v2/pokemon/?limit=12", function (data){
-	//$(".pokemon-name").html(data.name);
-  	//console.log(data);
-  	$.each(data.results, function(key, value){
-  	$("#pokemon-"+ (key+1)).html(value.name);
-	});
-  	});
-</script>
-<link rel="stylesheet" type="text/css" href="css_styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <title>Pokemon GO</title>
+    <script type="text/javascript">
+	  	for (var i = 1; i < 13; i++) {
+	  		$.get("http://pokeapi.co/api/v2/pokemon/" +i, function (data){
+		  		$("#pokemon-" + (data.id)).html(data.name);
+		  		for (var y = 0; y < data.types.length;  y++) {
+		  		  data.types[y].type.name
+		  		  prefContent = $("#ability-" + (data.id)).html()
+		  		  typeContent = prefContent + "<div class=\""+ data.types[y].type.name +" type\">"+ data.types[y].type.name +"</div>"
+				  $("#ability-" + (data.id)).html(typeContent);
+		  		}
+	  		});
+	  	};
+    </script>
+    <link rel="stylesheet" type="text/css" href="css_styles.css">
+  </head>
+  <body>
 	<div class="title">
 		<article>Pokedex</article>
 	</div>
@@ -29,7 +33,7 @@
 								<img src="http://pokeapi.co/media/img/1.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-1"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-1"></div>
 						</div>
 					</div>
 					<div class="holder">
@@ -38,7 +42,7 @@
 								<img src="http://pokeapi.co/media/img/2.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-2"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-2"></div>
 						</div>
 					</div>
 					<div class="holder">
@@ -47,7 +51,7 @@
 								<img src="http://pokeapi.co/media/img/3.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-3"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-3"></div>
 						</div>
 					</div>
 				</div>
@@ -58,7 +62,7 @@
 								<img src="http://pokeapi.co/media/img/4.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-4"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-4"></div>
 						</div>
 					</div>
 					<div class="holder">
@@ -67,7 +71,7 @@
 								<img src="http://pokeapi.co/media/img/5.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-5"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-5"></div>
 						</div>
 					</div>
 					<div class="holder">
@@ -76,7 +80,7 @@
 								<img src="http://pokeapi.co/media/img/6.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-6"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-6"></div>
 						</div>
 					</div>
 				</div>
@@ -87,7 +91,7 @@
 								<img src="http://pokeapi.co/media/img/7.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-7"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-7"></div>
 						</div>
 					</div>
 					<div class="holder">
@@ -96,7 +100,7 @@
 								<img src="http://pokeapi.co/media/img/8.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-8"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-8"></div>
 						</div>
 					</div>
 					<div class="holder">
@@ -105,7 +109,7 @@
 								<img src="http://pokeapi.co/media/img/9.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-9"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-9"></div>
 						</div>
 					</div>
 				</div>
@@ -116,7 +120,7 @@
 								<img src="http://pokeapi.co/media/img/10.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-10"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-10"></div>
 						</div>
 					</div>
 					<div class="holder">
@@ -125,7 +129,7 @@
 								<img src="http://pokeapi.co/media/img/11.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-11"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-11"></div>
 						</div>
 					</div>
 					<div class="holder">
@@ -134,7 +138,7 @@
 								<img src="http://pokeapi.co/media/img/12.png">
 							</div>
 							<div class="pokemon-name" id="pokemon-12"></div>
-							<div class="abilities"></div>
+							<div class="abilities" id="ability-12"></div>
 						</div>
 					</div>
 				</div>
@@ -142,9 +146,6 @@
 				<div class="button">
 					<a href="" target="_blank" class="load-more">Load More</a>
 				</div>
-				<footer>
-					&copy; 2016 All Rights Reserved.
-				</footer>
 		</div>
 		<div class="col-0-5">
 			<div class="profile">
@@ -162,5 +163,7 @@
 			</div>
 		</div>
 	</div>
-</body>
+	<footer>&copy; 2016 All Rights Reserved.
+	</footer>
+  </body>
 </html>
