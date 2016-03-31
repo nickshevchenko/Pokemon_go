@@ -4,28 +4,7 @@
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <title>Pokemon GO</title>
-    <script type="text/javascript">
-	  	for (var i = 1; i < 13; i++) {
-	  		$.get("http://pokeapi.co/api/v2/pokemon/" +i, function (data){
-		  		$("#pokemon-" + (data.id)).html(data.name);
-		  		for (var y = 0; y < data.types.length;  y++) {
-		  		  data.types[y].type.name
-		  		  prefContent = $("#ability-" + (data.id)).html()
-		  		  typeContent = prefContent + "<div class=\""+ data.types[y].type.name +" type\">"+ data.types[y].type.name +"</div>"
-				  $("#ability-" + (data.id)).html(typeContent);
-		  		}
-	  		});
-	  	};
-	  	//div appearance
-	  		$(function(){
-		  		$("#box").click(function(){
-		  		div = document.createElement('div');
-		  		$(div).addClass("profile").html();
-		  		$("#col-0-5").append(div);
-		  		});
-	  		});
-	  	
-    </script>
+    <script type="text/javascript" src="scripts.js"></script>
     <link rel="stylesheet" type="text/css" href="css_styles.css">
   </head>
   <body>
@@ -37,7 +16,7 @@
 			<div>
 				<div class="row">
 					<div class="holder">
-						<div class="form" id="box">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/1.png">
 							</div>
@@ -46,7 +25,7 @@
 						</div>
 					</div>
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/2.png">
 							</div>
@@ -55,7 +34,7 @@
 						</div>
 					</div>
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/3.png">
 							</div>
@@ -66,7 +45,7 @@
 				</div>
 				<div class="row">
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/4.png">
 							</div>
@@ -75,7 +54,7 @@
 						</div>
 					</div>
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/5.png">
 							</div>
@@ -84,7 +63,7 @@
 						</div>
 					</div>
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/6.png">
 							</div>
@@ -95,7 +74,7 @@
 				</div>
 				<div class="row">
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/7.png">
 							</div>
@@ -104,7 +83,7 @@
 						</div>
 					</div>
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/8.png">
 							</div>
@@ -113,7 +92,7 @@
 						</div>
 					</div>
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/9.png">
 							</div>
@@ -124,7 +103,7 @@
 				</div>
 				<div class="row">
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/10.png">
 							</div>
@@ -133,7 +112,7 @@
 						</div>
 					</div>
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/11.png">
 							</div>
@@ -142,7 +121,7 @@
 						</div>
 					</div>
 					<div class="holder">
-						<div class="form">
+						<div class="form" id="formfield">
 							<div class="picture">
 								<img src="http://pokeapi.co/media/img/12.png">
 							</div>
@@ -157,11 +136,9 @@
 				</div>
 		</div>
 		<div class="col-0-5">
-			<div class="profile">
-				<div class="picture-profile">
-					<img src="http://vignette2.wikia.nocookie.net/pokemon/images/7/7e/Ash_BW.gif/revision/latest?cb=20100827161543" class="profile-image">
-				</div>
-				<div class="pokemon-name-profile">Ash Ketchum</div>
+			<div class="profile" id="character">
+				<div class="picture-profile"></div>
+				<div class="pokemon-name-profile"></div>
 				<div class="abilities-profile"></div>
 				<div class="abilities-profile"></div>
 				<div class="abilities-profile"></div>

@@ -9,49 +9,42 @@
 	    box-shadow: 0 0 6px #888;
 	    transition: box-shadow 0.3s;
     }
-  	.title{
+.title{
   		position: relative;
   		border: 2px solid black;
 	    width: 500px;
 	    height: 80px;
 	    left: 40%;
   	}
-  	.holder{
+.holder{
   		display: inline;
   		float: left;
   	}
-  	.row{
+.row{
   		content: "";
   		display: table;
   		clear: both;
   	}
-  	.grid{
+.grid{
   		float: none;
   		margin: 100px 0 0 50px;
   	}
-  	.profile{
-  		border: 1px solid black;
-  		width: 300px;
-  		height: 450px;
-  		position: fixed;
-  		float: left;
-  	}
-  	.col-0-5{
+.col-0-5{
   		float: left;
   		width: 50%;
   	}
-  	.picture{
+.picture{
   		float: left;
   		border: 0px;
   		margin: 20px 20px 40px 40px;
   	}
-  	.abilities{
+.abilities{
       content: "";
       clear: both;
       display: table;
   		margin: 20px 8px 0 2px;
   	}
-  	.pokemon-name{
+.pokemon-name{
   		text-align: center;
   		font-weight: bold;
   		font-size: 1.375em;
@@ -59,34 +52,44 @@
   		text-transform: capitalize;
       color: #1D0772;
   	}
-    .profile-image{
+.profile-image{
       max-width: 50%;
       margin: 20px 0 0 80px;
     }
-  	.pokemon-name-profile{
+.profile{
+      border: 1px solid black;
+      width: 300px;
+      height: 450px;
+      position: fixed;
+      float: left;
+    }
+#character{
+      display: none;
+    }
+.pokemon-name-profile{
   		text-align: center;
       margin: 20px 0 0 0;
       font-size: 1.375em;
       font-weight: bold;
       font-family: Georgia, serif;
   	}
-  	.abilities-profile{
+.abilities-profile{
   		border: 1px solid black;
   		width: 280px;
   		height: 30px;
   		margin: 20px 8px 8px 8px;
   	}
-  	article{
+article{
   		text-align: center;
   		font-size: 50px;
   		margin: 7px;
   	}
-  	.button{
+.button{
   		float: left;
   		position: absolute;
   		margin: 0 0 55px 0;
   	}
-  	.load-more{
+.load-more{
   		background-color: #008CBA;
   		border-radius: 4px;
   		border: none;
@@ -98,21 +101,21 @@
     	font-size: 16px;
       font-weight: bold;
   	}
-    footer{
+footer{
       background-color: black;
       position: relative;
       margin: 90px 0 0 0;
       text-align: center;
       text-decoration: none;
-      display: inline-block;
+      display: none;
       font-size: 12px;
       font-weight: bold;
-      width: 100%;
+      width: auto;
       padding-top: 50px;
       padding-bottom: 10px;
       color: white;
     }
-    .type{
+.type{
       display: inline;
       border-radius: 4px;
       text-align: center;
@@ -121,24 +124,24 @@
       margin: 8px;
       text-transform: capitalize;
     }
-    .electric{
+.electric{
       background-color: #F8D030;
     }
-    .poison{
+.poison{
       background-color: #A040A0;
     }
-    .grass{
+.grass{
       background-color: #78C850;
     }
-    .fire{
+.fire{
       background-color: #F08030;
     }
-    .bug{
+.bug{
       background-color: #A8B820;
     }
-    .water{
+.water{
       background-color: #6890F0;
     }
-    .flying{
+.flying{
       background-color: #A890F0;
     }
