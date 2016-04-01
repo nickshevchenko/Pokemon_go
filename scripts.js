@@ -1,13 +1,17 @@
 profileContentStart = '\<div class="picture-profile"><img src="';
 profileName = '"></div>\<div class="pokemon-name-profile">';
-profileAbilities = '\</div>\<div class="abilities-profile"></div>';
-//profileContentEnd = '';
+profileAbilities = '\</div>\<div class="abilities-profile">';
+profileContentEnd = '</div>';
 for(var i = 1; i < 13; i++) {
   $.get("http://pokeapi.co/api/v2/pokemon/" +i, function (data){
-    $("#pokemon-" + (data.id)).html(data.name);
-    $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName + data.name + profileAbilities);
-    $("#pokemon-" + (data.id)).append('<input type="hidden" value="'+ data.id +'">');
-    for(var y = 0; y < data.types.length;  y++) {
+  	for (var z = 0; z < data.types.length; z++) {
+  		data.types[z].type.name
+  		$("#pokemon-" + (data.id)).html(data.name);
+    	$("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName + data.name + profileAbilities
+    	+ data.types[z].type.name + profileContentEnd);
+    	$("#pokemon-" + (data.id)).append('<input type="hidden" value="'+ data.id +'">');	
+  	}
+    for(var y = 0; y < data.types.length; y++) {
       data.types[y].type.name
       prefContent = $("#ability-" + (data.id)).html()
       typeContent = prefContent + "<div class=\""+ data.types[y].type.name +" type\">"+ data.types[y].type.name +"</div>"
