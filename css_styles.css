@@ -39,16 +39,23 @@
 }
 .col-1-1{
 		float: left;
-		width: 60%;
+		width: 55%;
 		border: 1px solid black;
 		height: 100px;
-		
+		display: inline;
 }
 .col-1-2{
 		float: left;
-		width: 40%;
+		width: 35%;
 		border: 1px solid black;
 		height: 100px;
+		display: inline;
+}
+.characteristics{
+		content: "";
+  		display: table;
+  		clear: both;
+  		justify-content: center;
 }
 .picture{
   		float: left;
