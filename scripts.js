@@ -1,7 +1,10 @@
 profileContentStart = '\<div class="picture-profile"><img src="';
 profileName = '"></div>\<div class="pokemon-name-profile">';
 profileAbilities = '\</div>\<div class="abilities-profile">';
-profileContentEnd = '</div>';
+profileAbilitiesEnd = '</div>';
+profileCharsFirst = '<div class="characteristics"><div class="col-1-5"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+profileCharsSecond = '<div class="col-1-5"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div>';
+
 
 Etypes = function(d){
 resultTypes = "";
@@ -14,7 +17,7 @@ for(var i = 1; i < 13; i++) {
   $.get("http://pokeapi.co/api/v2/pokemon/" +i, function (data){
     $("#pokemon-" + (data.id)).html(data.name);
     $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName + data.name + profileAbilities
-    + Etypes(data) + profileContentEnd);
+    + Etypes(data) + profileAbilitiesEnd + profileCharsFirst + profileCharsSecond);
     $("#pokemon-" + (data.id)).append('<input type="hidden" value="'+ data.id +'">');	
     
     for(var y = 0; y < data.types.length; y++) {
