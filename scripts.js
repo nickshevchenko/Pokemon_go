@@ -2,8 +2,8 @@ profileContentStart = '\<div class="picture-profile"><img src="';
 profileName = '"></div>\<div class="pokemon-name-profile">';
 profileAbilities = '\</div>\<div class="abilities-profile">';
 profileAbilitiesEnd = '</div>';
-profileCharsFirst = '<div class="characteristics"><div class="col-1-5"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
-profileCharsSecond = '<div class="col-1-5"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div>';
+profileCharsFirst = '<div class="characteristics"><div class="col-1-1"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+profileCharsSecond = '<div class="col-1-2"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div>';
 
 
 Etypes = function(d){
