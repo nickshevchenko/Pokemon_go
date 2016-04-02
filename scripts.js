@@ -4,10 +4,11 @@ profileAbilities = '\</div>\<div class="abilities-profile">';
 profileContentEnd = '</div>';
 
 Etypes = function(d){
-return "poison, grass";
-for (var z = 0; z < data.types.length; z++) {
-data.types[z].type.name
+resultTypes = "";
+for (var z = 0; z < d.types.length; z++) {
+resultTypes += d.types[z].type.name + " ";
 };
+return resultTypes;
 };
 for(var i = 1; i < 13; i++) {
   $.get("http://pokeapi.co/api/v2/pokemon/" +i, function (data){
