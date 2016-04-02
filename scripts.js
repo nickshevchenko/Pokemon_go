@@ -23,6 +23,7 @@ for(var i = 1; i < 13; i++) {
       $("#ability-" + (data.id)).html(typeContent);
     };
 };
+
 $(function(){
 var previous = "none";
 $(".form").click(function(e){
