@@ -29,10 +29,24 @@
   		float: none;
   		margin: 100px 0 0 50px;
   	}
-.col-0-5{
+.col-0-1{
   		float: left;
-  		width: 50%;
+  		width: 60%;
   	}
+.col-0-2{
+		float: left;
+		width: 40%;
+}
+.col-1-1{
+		float: left;
+		width: 60%;
+		border: 1px solid black;
+}
+.col-1-2{
+		float: left;
+		width: 40%;
+		border: 1px solid black;
+}
 .picture{
   		float: left;
   		border: 0px;
