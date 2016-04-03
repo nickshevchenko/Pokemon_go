@@ -1,8 +1,6 @@
-profileContentStart = '\<div class="picture-profile"><img src="';
-profileName = '"></div>\<div class="pokemon-name-profile">';
-profileAbilities = '\</div>\<div class="abilities-profile">';
-profileAbilitiesEnd = '</div>';
-profileCharsFirst = '<div class="characteristics"><div class="col-1-1">';
+profileContentStart = '<div class="picture-profile"><img src="';
+profileName = '"></div><div class="pokemon-name-profile">';
+profileCharsFirst = '</div><div class="characteristics"><div class="col-1-1">';
 profileCharsSecond = '</div><div class="col-1-2">';
 profileCharsEnd = '</div></div>';
 // selecting stats from stats massive
@@ -47,9 +45,8 @@ for(var i = 1; i < 13; i++) {
       statsInfo(currentInfo.weight) +
       statsInfo(currentInfo.totalMoves);
     $("#pokemon-" + (data.id)).html(data.name);
-    $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName + data.name
-    + profileAbilities + profileAbilitiesEnd + profileCharsFirst + combineFieldsNames + profileCharsSecond
-    + combineTypesNames + profileCharsEnd);
+    $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName
+      + data.name + profileCharsFirst + combineFieldsNames + profileCharsSecond + combineTypesNames + profileCharsEnd);
     $("#pokemon-" + (data.id)).append('<input type="hidden" value="'+ data.id +'">');	
     for(var y = 0; y < data.types.length; y++) {
       data.types[y].type.name
