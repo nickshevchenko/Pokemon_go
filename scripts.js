@@ -12,7 +12,7 @@ Etypes = function(d){
   };
   return resultTypes;
 };
-Attack = function(att){
+/*Attack = function(att){
   resultAttack = "";
   for (var a = 0; a < att.stats.length; a++) {
     resultAttack += att.stats[a].stat.name + " ";
@@ -21,12 +21,57 @@ Attack = function(att){
     $(".col-1-1").append(typeAttack);
   };
 };
+*/
+
+var currentInfo = {};
+
+var statsInfo = function(si){
+  return '<div>' + si + '</div>'
+};
+
+var parseData = function(ps){
+  currentInfo.weight = ps.weight
+  types = []
+  for(var t = 0; t < ps.types.length; t++){
+    types[t] = ps.types[t].type.name
+  };
+  currentInfo.types = types
+  currentInfo.totalMoves = ps.moves.length
+  for(var t = 0; t < ps.stats.length; t++){
+    currentInfo[ps.stats[t].stat.name] = ps.stats[t].base_stat
+  };
+};
+/*$.get("http://pokeapi.co/api/v2/pokemon/1", function (data){
+  parseData(data);
+  combineTypes = $('#hrarara').html(
+    statsInfo('Attack') + statsInfo(currentInfo.attack) +
+    statsInfo('Defense') + statsInfo(currentInfo.defense) +
+    statsInfo('HP') + statsInfo(currentInfo.hp) +
+    statsInfo('SP Attack') + statsInfo(currentInfo['special-attack']) +
+    statsInfo('SP Defense') + statsInfo(currentInfo['special-defense']) +
+    statsInfo('Speed') + statsInfo(currentInfo.speed) +
+    statsInfo('Weight') + statsInfo(currentInfo.weight) +
+    statsInfo('Total Moves') + statsInfo(currentInfo.totalMoves)
+  );
+});
+*/
 
 for(var i = 1; i < 13; i++) {
   $.get("http://pokeapi.co/api/v2/pokemon/" +i, function (data){
+    parseData(data);
+    combineTypes = $('.characteristics').html(
+      statsInfo('Attack') + statsInfo(currentInfo.attack) +
+      statsInfo('Defense') + statsInfo(currentInfo.defense) +
+      statsInfo('HP') + statsInfo(currentInfo.hp) +
+      statsInfo('SP Attack') + statsInfo(currentInfo['special-attack']) +
+    statsInfo('SP Defense') + statsInfo(currentInfo['special-defense']) +
+      statsInfo('Speed') + statsInfo(currentInfo.speed) +
+      statsInfo('Weight') + statsInfo(currentInfo.weight) +
+      statsInfo('Total Moves') + statsInfo(currentInfo.totalMoves)
+      );
     $("#pokemon-" + (data.id)).html(data.name);
     $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName + data.name + profileAbilities
-    + Etypes(data) + profileAbilitiesEnd + profileCharsFirst + Attack(data) + profileCharsSecond);
+    + Etypes(data) + profileAbilitiesEnd + combineTypes);
     $("#pokemon-" + (data.id)).append('<input type="hidden" value="'+ data.id +'">');	
     
     for(var y = 0; y < data.types.length; y++) {
