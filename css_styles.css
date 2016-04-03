@@ -1,60 +1,72 @@
-.form{
-	    border: 1px solid #ddd;
-	    width: 200px;
-	    height: 300px;
-	    margin: 0 20px 20px 0;
-	    transition: box-shadow 0.3s;
-    }
-.form:hover{
-	    box-shadow: 0 0 6px #888;
-	    transition: box-shadow 0.3s;
-    }
-.title{
-  		position: relative;
-  		border: 2px solid black;
-	    width: 500px;
-	    height: 80px;
-	    left: 40%;
-  	}
-.holder{
-  		display: inline;
-  		float: left;
-  	}
+html, body{
+  margin: 0;
+}
+article{
+  text-align: center;
+  font-size: 50px;
+  margin: 7px;
+}
 .row{
-  		content: "";
-  		display: table;
-  		clear: both;
-  	}
+  content: "";
+  display: table;
+  clear: both;
+}
+.holder{
+  display: inline;
+  float: left;
+}
+.form{
+  border: 1px solid #ddd;
+  width: 200px;
+  height: 300px;
+  margin: 0 20px 20px 0;
+  transition: box-shadow 0.3s;
+}
+.form:hover{
+  box-shadow: 0 0 6px #888;
+  transition: box-shadow 0.3s;
+}
+.title{
+  position: relative;
+  border: 2px solid black;
+  width: 500px;
+  height: 80px;
+  left: 40%;
+}
 .grid{
-  		float: none;
-  		margin: 100px 0 0 50px;
-  	}
+  float: none;
+  margin: 100px 0 0 50px;
+}
 .col-0-1{
-  		float: left;
-  		width: 60%;
-  	}
+  float: left;
+  width: 60%;
+}
 .col-0-2{
-		float: left;
-		width: 40%;
+	float: left;
+	width: 40%;
 }
-.col-1-1{
-		float: left;
-		width: 55%;
-		border: 1px solid black;
-		height: 100px;
-}
-.col-1-2{
-		float: left;
-		width: 35%;
-		border: 1px solid black;
-		height: 100px;
+.profile{
+  border: 1px solid #ddd;
+  width: 300px;
+  height: 450px;
+  position: fixed;
+  float: left;
 }
 .characteristics{
-		content: "";
-  		display: table;
-  		clear: both;
-  		justify-content: center;
-  		display: inline;
+  content: "";
+  display: table;
+  clear: both;
+  justify-content: center;
+  display: flex;
+  margin: 0;
+}
+.col-1-1{
+		width: 55%;
+    float: left;
+}
+.col-1-2{
+		width: 35%;
+    float: left;
 }
 .picture{
   		float: left;
@@ -82,13 +94,6 @@
       max-width: 50%;
       margin: 20px 0 0 80px;
     }
-.profile{
-      border: 1px solid #ddd;
-      width: 300px;
-      height: 450px;
-      position: fixed;
-      float: left;
-    }
 #character{
       display: none;
     }
@@ -98,13 +103,10 @@
       font-size: 1.375em;
       font-weight: bold;
       font-family: Georgia, serif;
-  	}
+      text-transform: capitalize;
+      color: #1D0772;
+}
 .abilities-profile{
-  	}
-article{
-  		text-align: center;
-  		font-size: 50px;
-  		margin: 7px;
   	}
 .button{
   		float: left;
@@ -123,20 +125,6 @@ article{
     	font-size: 16px;
       font-weight: bold;
   	}
-footer{
-      background-color: black;
-      position: relative;
-      margin: 90px 0 0 0;
-      text-align: center;
-      text-decoration: none;
-      display: none;
-      font-size: 12px;
-      font-weight: bold;
-      width: auto;
-      padding-top: 50px;
-      padding-bottom: 10px;
-      color: white;
-    }
 .type{
       display: inline;
       border-radius: 4px;
@@ -167,3 +155,17 @@ footer{
 .flying{
       background-color: #A890F0;
     }
+footer{
+      background-color: black;
+      position: relative;
+      margin: 90px 0 0 0;
+      text-align: center;
+      text-decoration: none;
+      display: none;
+      font-size: 12px;
+      font-weight: bold;
+      width: auto;
+      padding-top: 50px;
+      padding-bottom: 10px;
+      color: white;
+}
