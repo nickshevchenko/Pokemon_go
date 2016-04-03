@@ -3,32 +3,13 @@ profileName = '"></div>\<div class="pokemon-name-profile">';
 profileAbilities = '\</div>\<div class="abilities-profile">';
 profileAbilitiesEnd = '</div>';
 profileCharsFirst = '<div class="characteristics"><div class="col-1-1">';
-profileCharsSecond = '</div><div class="col-1-2"></div></div>';
-
-Etypes = function(d){
-  resultTypes = "";
-  for (var z = 0; z < d.types.length; z++) {
-    resultTypes += d.types[z].type.name + " ";
-  };
-  return resultTypes;
-};
-/*Attack = function(att){
-  resultAttack = "";
-  for (var a = 0; a < att.stats.length; a++) {
-    resultAttack += att.stats[a].stat.name + " ";
-    typeAttack = "<div class=\""+ att.stats[a].stat.name + " line\">" + att.stats[a].stat.name + "</div>";
-    console.log(resultAttack);
-    $(".col-1-1").append(typeAttack);
-  };
-};
-*/
-
+profileCharsSecond = '</div><div class="col-1-2">';
+profileCharsEnd = '</div></div>';
+// selecting stats from stats massive
 var currentInfo = {};
-
 var statsInfo = function(si){
   return '<div>' + si + '</div>'
 };
-
 var parseData = function(ps){
   currentInfo.weight = ps.weight
   types = []
@@ -41,39 +22,35 @@ var parseData = function(ps){
     currentInfo[ps.stats[t].stat.name] = ps.stats[t].base_stat
   };
 };
-/*$.get("http://pokeapi.co/api/v2/pokemon/1", function (data){
-  parseData(data);
-  combineTypes = $('#hrarara').html(
-    statsInfo('Attack') + statsInfo(currentInfo.attack) +
-    statsInfo('Defense') + statsInfo(currentInfo.defense) +
-    statsInfo('HP') + statsInfo(currentInfo.hp) +
-    statsInfo('SP Attack') + statsInfo(currentInfo['special-attack']) +
-    statsInfo('SP Defense') + statsInfo(currentInfo['special-defense']) +
-    statsInfo('Speed') + statsInfo(currentInfo.speed) +
-    statsInfo('Weight') + statsInfo(currentInfo.weight) +
-    statsInfo('Total Moves') + statsInfo(currentInfo.totalMoves)
-  );
-});
-*/
-
+// placing all required info in "hidden-info" div and selecting types for main pokemon windows
 for(var i = 1; i < 13; i++) {
   $.get("http://pokeapi.co/api/v2/pokemon/" +i, function (data){
     parseData(data);
-    combineTypes = 
-      statsInfo('Attack') + statsInfo(currentInfo.attack) +
-      statsInfo('Defense') + statsInfo(currentInfo.defense) +
-      statsInfo('HP') + statsInfo(currentInfo.hp) +
-      statsInfo('SP Attack') + statsInfo(currentInfo['special-attack']) +
-    statsInfo('SP Defense') + statsInfo(currentInfo['special-defense']) +
-      statsInfo('Speed') + statsInfo(currentInfo.speed) +
-      statsInfo('Weight') + statsInfo(currentInfo.weight) +
-      statsInfo('Total Moves') + statsInfo(currentInfo.totalMoves)
-
+    combineFieldsNames =
+      statsInfo('Type') +
+      statsInfo('Attack') +
+      statsInfo('Defense') +
+      statsInfo('HP') +
+      statsInfo('SP Attack') +
+      statsInfo('SP Defense') +
+      statsInfo('Speed') +
+      statsInfo('Weight') +
+      statsInfo('Total Moves');
+    combineTypesNames =
+      statsInfo(currentInfo.types) +
+      statsInfo(currentInfo.attack) +
+      statsInfo(currentInfo.defense) +
+      statsInfo(currentInfo.hp) +
+      statsInfo(currentInfo['special-attack']) +
+      statsInfo(currentInfo['special-defense']) +
+      statsInfo(currentInfo.speed) +
+      statsInfo(currentInfo.weight) +
+      statsInfo(currentInfo.totalMoves);
     $("#pokemon-" + (data.id)).html(data.name);
-    $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName + data.name + profileAbilities
-    + Etypes(data) + profileAbilitiesEnd + combineTypes);
+    $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName + data.name
+    + profileAbilities + profileAbilitiesEnd + profileCharsFirst + combineFieldsNames + profileCharsSecond
+    + combineTypesNames + profileCharsEnd);
     $("#pokemon-" + (data.id)).append('<input type="hidden" value="'+ data.id +'">');	
-    
     for(var y = 0; y < data.types.length; y++) {
       data.types[y].type.name
       prefContent = $("#ability-" + (data.id)).html()
@@ -82,17 +59,26 @@ for(var i = 1; i < 13; i++) {
     };
 });
 };
+// click on pokemon info to open a separate window with all required info
 $(function(){
-var previous = "none";
-$(".form").click(function(e){
-	current = $(e.target).parents(".form").children(".pokemon-name").children("input").val();
-	$("#character").html($(e.target).parents(".form").children(".hidden-info").html());
-    if(previous == current){
+  var previous = "none";
+  $(".form").click(function(e){
+  	current = $(e.target).parents(".form").children(".pokemon-name").children("input").val();
+  	$("#character").html($(e.target).parents(".form").children(".hidden-info").html());
+      if(previous == current){
         $("#character").css('display','none');
         previous = "none";
-    }else{
+      }
+      else{
         $("#character").css('display','block');
         previous = current;
-    }
+      }
+  });
 });
-});
+// click on Load more
+// $('.button').click(function(){
+//   var count = $('.form').length;
+//   for (var l = count; l < (count+3); l++){
+//     $
+//   }
+// }
