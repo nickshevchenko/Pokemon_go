@@ -59,7 +59,7 @@ var parseData = function(ps){
 for(var i = 1; i < 13; i++) {
   $.get("http://pokeapi.co/api/v2/pokemon/" +i, function (data){
     parseData(data);
-    combineTypes = $('.characteristics').html(
+    combineTypes = 
       statsInfo('Attack') + statsInfo(currentInfo.attack) +
       statsInfo('Defense') + statsInfo(currentInfo.defense) +
       statsInfo('HP') + statsInfo(currentInfo.hp) +
@@ -68,7 +68,7 @@ for(var i = 1; i < 13; i++) {
       statsInfo('Speed') + statsInfo(currentInfo.speed) +
       statsInfo('Weight') + statsInfo(currentInfo.weight) +
       statsInfo('Total Moves') + statsInfo(currentInfo.totalMoves)
-      );
+
     $("#pokemon-" + (data.id)).html(data.name);
     $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName + data.name + profileAbilities
     + Etypes(data) + profileAbilitiesEnd + combineTypes);
