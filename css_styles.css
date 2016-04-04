@@ -11,6 +11,7 @@ article{
   display: table;
   clear: both;
   float: right;
+  margin: 0 150px 0 0;
 }
 .holder{
   display: inline;
@@ -52,7 +53,7 @@ article{
   height: 360px;
   position: fixed;
   float: left;
-  margin: 272px 0 0 100px;
+  margin: 272px 0 0 0;
 }
 .characteristics{
   content: "";
@@ -138,9 +139,9 @@ article{
   margin: 10px 20px 0 80px;
 }
 .button{
-  float: left;
+  float: right;
   position: relative;
-  margin: 0 0 55px 132px;
+  margin: 0 169px 55px 0;
 }
 .load-more{
   background-color: #008CBA;
