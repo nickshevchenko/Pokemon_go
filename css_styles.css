@@ -52,6 +52,7 @@ article{
   height: 360px;
   position: fixed;
   float: left;
+  margin: 272px 0 0 100px;
 }
 .characteristics{
   content: "";
@@ -138,8 +139,8 @@ article{
 }
 .button{
   float: left;
-  position: absolute;
-  margin: 0 0 55px 0;
+  position: relative;
+  margin: 0 0 55px 132px;
 }
 .load-more{
   background-color: #008CBA;
