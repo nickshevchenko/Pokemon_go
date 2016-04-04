@@ -10,6 +10,7 @@ article{
   content: "";
   display: table;
   clear: both;
+  float: right;
 }
 .holder{
   display: inline;
