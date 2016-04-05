@@ -20,9 +20,8 @@ var parseData = function(ps){
     currentInfo[ps.stats[t].stat.name] = ps.stats[t].base_stat
   };
 };
-// placing all required info in "hidden-info" div and selecting types for main pokemon windows
-for(var i = 1; i < 13; i++) {
-  $.get("http://pokeapi.co/api/v2/pokemon/" +i, function (data){
+var GetDataAndRender = function(id){
+  $.get("http://pokeapi.co/api/v2/pokemon/" +id, function (data){
     parseData(data);
     combineFieldsNames =
       statsInfo('Type') +
@@ -56,6 +55,10 @@ for(var i = 1; i < 13; i++) {
     };
 });
 };
+// placing all required info in "hidden-info" div and selecting types for main pokemon windows
+for(var i = 1; i < 13; i++) {
+  GetDataAndRender(i);
+};
 // click on pokemon info to open a separate window with all required info
 $(function(){
   var previous = "none";
@@ -73,9 +76,22 @@ $(function(){
   });
 });
 // click on Load more
-// $('.button').click(function(){
-//   var count = $('.form').length;
-//   for (var l = count; l < (count+3); l++){
-//     $
-//   }
-// }
+var holderContainer =
+      '<div class="holder">\
+        <div class="form">\
+			    <div class="picture">\
+				    <img src="http://pokeapi.co/media/sprites/pokemon/1.png">\
+				  </div>\
+				  <div class="pokemon-name" id="pokemon-1"></div>\
+				  <div class="abilities" id="ability-1"></div>\
+				  <div class="hidden-info"></div>\
+			  </div>\
+			</div>';
+$('.button').click(function(){
+  $(".col-0-1").append('<div class="row"></div>');
+   var count = $('.form').length;
+   for (var l = count; l < (count+3); l++){
+     GetDataAndRender(l+1);
+     $(".row").last().append(holderContainer.replace('1', l));
+   };
+});
