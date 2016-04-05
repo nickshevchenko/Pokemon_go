@@ -76,11 +76,11 @@ $(function(){
   });
  $('.button').click(function(e){
   e.preventDefault();
-  $(".col-0-1").append('<div class="row"></div>');
+  $(".row").last().after('<div class="row"></div>');
    var count = $('.form').length;
    for (var l = count; l < (count+3); l++){
      GetDataAndRender(l+1);
-     $(".row").last().append(holderContainer.replace('1', l));
+     $(".row").last().append(holderContainer.replace('1', (l+1)));
    };
 });
 });
