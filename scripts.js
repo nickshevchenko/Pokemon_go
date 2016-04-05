@@ -53,13 +53,12 @@ var GetDataAndRender = function(id){
       typeContent = prefContent + "<div class=\""+ data.types[y].type.name +" type\">"+ data.types[y].type.name +"</div>"
       $("#ability-" + (data.id)).html(typeContent);
     };
-});
+  });
 };
-// placing all required info in "hidden-info" div and selecting types for main pokemon windows
+// click on pokemon info to open a separate window with all required info
 for(var i = 1; i < 13; i++) {
   GetDataAndRender(i);
 };
-// click on pokemon info to open a separate window with all required info
 $(function(){
   var previous = "none";
   $(document).on('click', ".form", function(e){
@@ -74,25 +73,25 @@ $(function(){
         previous = current;
       }
   });
- $('.button').click(function(e){
-  e.preventDefault();
-  $(".row").last().after('<div class="row"></div>');
-   var count = $('.form').length;
-   for (var l = count; l < (count+3); l++){
-     GetDataAndRender(l+1);
-     $(".row").last().append(holderContainer.replace(/1/g, (l+1)));
-   };
-});
-});
 // click on Load more
-var holderContainer =
-      '<div class="holder">\
-        <div class="form">\
-			    <div class="picture">\
-				    <img src="http://pokeapi.co/media/sprites/pokemon/1.png">\
-				  </div>\
-				  <div class="pokemon-name" id="pokemon-1"></div>\
-				  <div class="abilities" id="ability-1"></div>\
-				  <div class="hidden-info"></div>\
-			  </div>\
-			</div>';
+  var holderContainer =
+    '<div class="holder">\
+      <div class="form">\
+        <div class="picture">\
+          <img src="http://pokeapi.co/media/sprites/pokemon/1.png">\
+        </div>\
+        <div class="pokemon-name" id="pokemon-1"></div>\
+        <div class="abilities" id="ability-1"></div>\
+        <div class="hidden-info"></div>\
+      </div>\
+      </div>';
+  $('.button').click(function(e){
+    e.preventDefault();
+    $(".row").last().after('<div class="row"></div>');
+    var count = $('.form').length;
+    for (var l = count; l < (count+3); l++){
+      GetDataAndRender(l+1);
+      $(".row").last().append(holderContainer.replace(/1/g, (l+1)));
+    };
+  });
+});

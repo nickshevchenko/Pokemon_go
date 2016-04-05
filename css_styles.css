@@ -1,43 +1,22 @@
 html, body{
   margin: 0;
 }
+.title{
+  border: 1px solid black;
+  position: relative;
+  left: 35%;
+  margin-top: 20px;
+  width: 450px;
+}
 article{
   text-align: center;
-  font-size: 50px;
-  margin: 7px;
-}
-.row{
-  content: "";
-  display: table;
-  clear: both;
-  float: right;
-  margin: 0 100px 0 0;
-}
-.holder{
-  display: inline;
-  float: left;
-}
-.form{
-  border: 1px solid #0d0d0d;
-  width: 200px;
-  height: 250px;
-  margin: 0 20px 20px 0;
-  transition: box-shadow 0.3s;
-}
-.form:hover{
-  box-shadow: 0 0 11px #808080;
-  transition: box-shadow 0.3s;
-}
-.title{
-  position: relative;
-  border: 2px solid black;
-  width: 500px;
-  height: 80px;
-  left: 40%;
+  padding: 10px;
+  font-size: 2.5em;
+  font-family: Verdana, sans-serif;
 }
 .grid{
   float: none;
-  margin: 100px 0 0 50px;
+  margin: 30px 0 0 20px;
 }
 .col-0-1{
   float: left;
@@ -47,13 +26,35 @@ article{
 	float: left;
 	width: 40%;
 }
+.row{
+  content: "";
+  display: table;
+  clear: both;
+  float: right;
+  margin: 0 80px 0 0;
+}
+.holder{
+  display: inline;
+  float: left;
+}
+.form{
+  border: 1px solid #0d0d0d;
+  width: 210px;
+  height: 250px;
+  margin: 0 20px 20px 0;
+  transition: box-shadow 0.3s;
+}
+.form:hover{
+  box-shadow: 0 0 12px #808080;
+  transition: box-shadow 0.3s;
+}
 .profile{
   border: 1px solid #0d0d0d;
   width: 250px;
-  height: 360px;
+  height: 375px;
   position: fixed;
   float: left;
-  margin: 272px 0 0 0;
+  margin: 8% 0 0 0;
 }
 .characteristics{
   content: "";
@@ -64,7 +65,7 @@ article{
   margin: 0;
 }
 .col-1-1{
-	width: 55%;
+	width: 52%;
   float: left;
   border-width: 0.5px 0 0 0.5px;
   border-color: #333333;
@@ -74,10 +75,10 @@ article{
   border-width: 0 0 0.5px 0;
   border-style: solid;
   border-color: #333333;
-  padding: 4px;
+  padding: 5px;
 }
 .col-1-2{
-	width: 35%;
+	width: 38%;
   float: left;
   border-width: 0.5px 0.5px 0 0;
   border-style: solid;
@@ -87,7 +88,7 @@ article{
   border-width: 0 0 0.5px 0.5px;
   border-style: solid;
   border-color: #333333;
-  padding: 4px;
+  padding: 5px;
   text-transform: capitalize;
 }
 .col-1-1, .col-1-2{
@@ -99,10 +100,6 @@ article{
   border: 0px;
   text-align: center;
   margin: 10px 0 0 0;
-}
-.picture img{
-  width: 60%;
-  height: auto;
 }
 .abilities{
   content: "";
@@ -140,19 +137,19 @@ article{
 }
 .button{
   float: right;
-  position: relative;
-  margin: 0 169px 55px 0;
+  position: static;
+  margin: 0 99px 35px 0;
 }
 .load-more{
   background-color: #008CBA;
   border-radius: 4px;
   border: none;
   color: white;
-  padding: 12px 285px;
+  padding: 12px 295px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1.125em;
   font-weight: bold;
 }
 .type{
@@ -217,18 +214,4 @@ article{
 }
 .fairy{
   background-color: #EE99AC;
-}
-footer{
-      background-color: black;
-      position: relative;
-      margin: 90px 0 0 0;
-      text-align: center;
-      text-decoration: none;
-      display: none;
-      font-size: 12px;
-      font-weight: bold;
-      width: auto;
-      padding-top: 50px;
-      padding-bottom: 10px;
-      color: white;
 }
