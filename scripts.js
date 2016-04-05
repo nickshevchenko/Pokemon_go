@@ -62,7 +62,7 @@ for(var i = 1; i < 13; i++) {
 // click on pokemon info to open a separate window with all required info
 $(function(){
   var previous = "none";
-  $(".form").live('click', function(e){
+  $(document).on('click', ".form", function(e){
   	current = $(e.target).parents(".form").children(".pokemon-name").children("input").val();
   	$("#character").html($(e.target).parents(".form").children(".hidden-info").html());
       if(previous == current){
