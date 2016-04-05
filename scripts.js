@@ -87,7 +87,8 @@ var holderContainer =
 				  <div class="hidden-info"></div>\
 			  </div>\
 			</div>';
-$('.button').click(function(){
+$('.button').click(function(e){
+  e.preventDefault();
   $(".col-0-1").append('<div class="row"></div>');
    var count = $('.form').length;
    for (var l = count; l < (count+3); l++){
