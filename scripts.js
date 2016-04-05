@@ -80,7 +80,7 @@ $(function(){
    var count = $('.form').length;
    for (var l = count; l < (count+3); l++){
      GetDataAndRender(l+1);
-     $(".row").last().append(holderContainer.replace('1', (l+1)));
+     $(".row").last().append(holderContainer.replace(/1/g, (l+1)));
    };
 });
 });
