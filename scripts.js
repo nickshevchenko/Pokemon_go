@@ -62,7 +62,7 @@ for(var i = 1; i < 13; i++) {
 // click on pokemon info to open a separate window with all required info
 $(function(){
   var previous = "none";
-  $(".form").click(function(e){
+  $(".form").live('click', function(e){
   	current = $(e.target).parents(".form").children(".pokemon-name").children("input").val();
   	$("#character").html($(e.target).parents(".form").children(".hidden-info").html());
       if(previous == current){
@@ -74,6 +74,15 @@ $(function(){
         previous = current;
       }
   });
+ $('.button').click(function(e){
+  e.preventDefault();
+  $(".col-0-1").append('<div class="row"></div>');
+   var count = $('.form').length;
+   for (var l = count; l < (count+3); l++){
+     GetDataAndRender(l+1);
+     $(".row").last().append(holderContainer.replace('1', l));
+   };
+});
 });
 // click on Load more
 var holderContainer =
@@ -87,12 +96,3 @@ var holderContainer =
 				  <div class="hidden-info"></div>\
 			  </div>\
 			</div>';
-$('.button').click(function(e){
-  e.preventDefault();
-  $(".col-0-1").append('<div class="row"></div>');
-   var count = $('.form').length;
-   for (var l = count; l < (count+3); l++){
-     GetDataAndRender(l+1);
-     $(".row").last().append(holderContainer.replace('1', l));
-   };
-});
