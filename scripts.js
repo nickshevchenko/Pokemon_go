@@ -12,49 +12,49 @@ var statsInfo = function (si) {
 var parseData = function (ps) {
     'use strict';
     currentInfo.weight = ps.weight;
-  var types = [];
+    var types = [];
   for (var t = 0; t < ps.types.length; t++) {
-    types[t] = ps.types[t].type.name;
+      types[t] = ps.types[t].type.name;
     }
     currentInfo.types = types;
     currentInfo.totalMoves = ps.moves.length;
   for (var t = 0; t < ps.stats.length; t++) {
-        currentInfo[ps.stats[t].stat.name] = ps.stats[t].base_stat;
+      currentInfo[ps.stats[t].stat.name] = ps.stats[t].base_stat;
     }
 };
 var getDataAndRender = function (id) {
     'use strict';
-  $.get("http://pokeapi.co/api/v2/pokemon/" + id, function (data) {
+    $.get("http://pokeapi.co/api/v2/pokemon/" + id, function (data) {
         parseData(data);
-    var combineFieldsNames =
-      statsInfo('Type') +
-      statsInfo('Attack') +
-      statsInfo('Defense') +
-      statsInfo('HP') +
-      statsInfo('SP Attack') +
-      statsInfo('SP Defense') +
-      statsInfo('Speed') +
-      statsInfo('Weight') +
-      statsInfo('Total Moves');
-    var combineTypesNames =
-      statsInfo(currentInfo.types) +
-      statsInfo(currentInfo.attack) +
-      statsInfo(currentInfo.defense) +
-      statsInfo(currentInfo.hp) +
-      statsInfo(currentInfo['special-attack']) +
-      statsInfo(currentInfo['special-defense']) +
-      statsInfo(currentInfo.speed) +
-      statsInfo(currentInfo.weight) +
-      statsInfo(currentInfo.totalMoves);
+        var combineFieldsNames =
+          statsInfo('Type') +
+          statsInfo('Attack') +
+          statsInfo('Defense') +
+          statsInfo('HP') +
+          statsInfo('SP Attack') +
+          statsInfo('SP Defense') +
+          statsInfo('Speed') +
+          statsInfo('Weight') +
+          statsInfo('Total Moves');
+        var combineTypesNames =
+          statsInfo(currentInfo.types) +
+          statsInfo(currentInfo.attack) +
+          statsInfo(currentInfo.defense) +
+          statsInfo(currentInfo.hp) +
+          statsInfo(currentInfo['special-attack']) +
+          statsInfo(currentInfo['special-defense']) +
+          statsInfo(currentInfo.speed) +
+          statsInfo(currentInfo.weight) +
+          statsInfo(currentInfo.totalMoves);
     $("#pokemon-" + (data.id)).html(data.name);
     $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName
       + data.name + profileCharsFirst + combineFieldsNames + profileCharsSecond + combineTypesNames + profileCharsEnd);
     $("#pokemon-" + (data.id)).append('<input type="hidden" value="' + data.id + '">');
     for (var y = 0; y < data.types.length; y++) {
-      data.types[y].type.name;
-      var prefContent = $("#ability-" + (data.id)).html();
-      var typeContent = prefContent + "<div class=\"" + data.types[y].type.name + " type\">" + data.types[y].type.name + "</div>";
-      $("#ability-" + (data.id)).html(typeContent);
+        data.types[y].type.name;
+        var prefContent = $("#ability-" + (data.id)).html();
+        var typeContent = prefContent + "<div class=\"" + data.types[y].type.name + " type\">" + data.types[y].type.name + "</div>";
+        $("#ability-" + (data.id)).html(typeContent);
         }
     });
 };
@@ -85,8 +85,8 @@ $(function () {
     $(".row").last().after('<div class="row"></div>');
         var count = $('.form').length;
     for (var l = count; l < (count + 3); l++) {
-      getDataAndRender(l + 1);
-      $(".row").last().append(holderContainer.replace(/1/g, (l + 1)));
+        getDataAndRender(l + 1);
+        $(".row").last().append(holderContainer.replace(/1/g, (l + 1)));
         }
     });
 });
