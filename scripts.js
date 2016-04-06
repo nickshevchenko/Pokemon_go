@@ -1,5 +1,5 @@
 profileContentStart = '<div class="picture-profile"><img src="';
-profileName = '"></div><div class="pokemon-name-profile">';
+profileName = '" alt="Pokemon Picture"></div><div class="pokemon-name-profile">';
 profileCharsFirst = '</div><div class="characteristics"><div class="col-1-1">';
 profileCharsSecond = '</div><div class="col-1-2">';
 profileCharsEnd = '</div></div>';
@@ -46,7 +46,7 @@ var GetDataAndRender = function(id){
     $("#pokemon-" + (data.id)).html(data.name);
     $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName
       + data.name + profileCharsFirst + combineFieldsNames + profileCharsSecond + combineTypesNames + profileCharsEnd);
-    $("#pokemon-" + (data.id)).append('<input type="hidden" value="'+ data.id +'">');	
+    $("#pokemon-" + (data.id)).append('<input type="hidden" value="'+ data.id +'">');
     for(var y = 0; y < data.types.length; y++) {
       data.types[y].type.name
       prefContent = $("#ability-" + (data.id)).html()
