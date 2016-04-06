@@ -12,13 +12,13 @@ var statsInfo = function (si) {
 var parseData = function (ps) {
     'use strict';
     currentInfo.weight = ps.weight;
-  types = [];
-  for (t = 0; t < ps.types.length; t++) {
+  var types = [];
+  for (var t = 0; t < ps.types.length; t++) {
     types[t] = ps.types[t].type.name;
     }
     currentInfo.types = types;
     currentInfo.totalMoves = ps.moves.length;
-  for (t = 0; t < ps.stats.length; t++) {
+  for (var t = 0; t < ps.stats.length; t++) {
         currentInfo[ps.stats[t].stat.name] = ps.stats[t].base_stat;
     }
 };
@@ -26,7 +26,7 @@ var getDataAndRender = function (id) {
     'use strict';
   $.get("http://pokeapi.co/api/v2/pokemon/" + id, function (data) {
         parseData(data);
-    combineFieldsNames =
+    var combineFieldsNames =
       statsInfo('Type') +
       statsInfo('Attack') +
       statsInfo('Defense') +
@@ -36,7 +36,7 @@ var getDataAndRender = function (id) {
       statsInfo('Speed') +
       statsInfo('Weight') +
       statsInfo('Total Moves');
-    combineTypesNames =
+    var combineTypesNames =
       statsInfo(currentInfo.types) +
       statsInfo(currentInfo.attack) +
       statsInfo(currentInfo.defense) +
@@ -50,23 +50,23 @@ var getDataAndRender = function (id) {
     $("#pokemon-" + (data.id)).siblings(".hidden-info").html(profileContentStart + data.sprites.front_default + profileName
       + data.name + profileCharsFirst + combineFieldsNames + profileCharsSecond + combineTypesNames + profileCharsEnd);
     $("#pokemon-" + (data.id)).append('<input type="hidden" value="' + data.id + '">');
-    for (y = 0; y < data.types.length; y++) {
+    for (var y = 0; y < data.types.length; y++) {
       data.types[y].type.name;
-      prefContent = $("#ability-" + (data.id)).html();
-      typeContent = prefContent + "<div class=\"" + data.types[y].type.name + " type\">" + data.types[y].type.name + "</div>";
+      var prefContent = $("#ability-" + (data.id)).html();
+      var typeContent = prefContent + "<div class=\"" + data.types[y].type.name + " type\">" + data.types[y].type.name + "</div>";
       $("#ability-" + (data.id)).html(typeContent);
         }
     });
 };
 // click on pokemon info to open a separate window with all required info
-for (i = 1; i < 13; i++) {
+for ( var i = 1; i < 13; i++) {
   getDataAndRender(i);
 }
 $(function () {
     'use strict';
-  var previous = "none";
+    var previous = "none";
   $(document).on('click', ".form", function (e) {
-    current = $(e.target).parents(".form").children(".pokemon-name").children("input").val();
+    var current = $(e.target).parents(".form").children(".pokemon-name").children("input").val();
     $("#character").html($(e.target).parents(".form").children(".hidden-info").html());
         if (previous == current) {
         $("#character").css('display', 'none');
@@ -84,7 +84,7 @@ $(function () {
         e.preventDefault();
     $(".row").last().after('<div class="row"></div>');
         var count = $('.form').length;
-    for (l = count; l < (count + 3); l++) {
+    for (var l = count; l < (count + 3); l++) {
       getDataAndRender(l + 1);
       $(".row").last().append(holderContainer.replace(/1/g, (l + 1)));
         }
