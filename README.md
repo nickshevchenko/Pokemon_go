@@ -6,3 +6,4 @@
 ####On click on Pokemon card a new Pokemon view will be opened for the selected Pokemon. This view contains more detailed info about selected Pokemon' abilities.
 
 #####Hope you'll enjoy the app! For more details, please contact me via email: nick.shevchyenko@gmail.com
+######Currently I'm working on adding a filter for Pokemons types, adaptive stype and js improvements such as making the code satisfied to ErmaScript 6 requirements.
