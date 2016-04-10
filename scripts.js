@@ -3,7 +3,7 @@ var profileName = '" alt="Pokemon Picture"></div><div class="pokemon-name-profil
 var profileCharsFirst = '</div><div class="characteristics"><div class="col-1-1">';
 var profileCharsSecond = '</div><div class="col-1-2">';
 var profileCharsEnd = '</div></div>';
-// selecting stats from stats massive
+// selecting/parsing stats
 var currentInfo = {};
 var statsInfo = function (si) {
     'use strict';
@@ -55,13 +55,13 @@ var getDataAndRender = function (id) {
         var prefContent = $("#ability-" + (data.id)).html();
         var typeContent = prefContent + "<div class=\"" + data.types[y].type.name + " type\">" + data.types[y].type.name + "</div>";
         $("#ability-" + (data.id)).html(typeContent);
-        }
+      }
     });
 };
 // click on pokemon info to open a separate window with all required info
-for ( var i = 1; i < 13; i++) {
-  getDataAndRender(i);
-}
+for (var i = 1; i < 13; i++) {
+    getDataAndRender(i);
+  }
 $(function () {
     'use strict';
     var previous = "none";
@@ -69,12 +69,12 @@ $(function () {
     var current = $(e.target).parents(".form").children(".pokemon-name").children("input").val();
     $("#character").html($(e.target).parents(".form").children(".hidden-info").html());
         if (previous == current) {
-        $("#character").css('display', 'none');
+            $("#character").css('display', 'none');
             previous = "none";
         }
          else {
-        $("#character").css('display', 'block');
-        previous = current;
+            $("#character").css('display', 'block');
+            previous = current;
         }
     });
 // click on Load more
@@ -87,6 +87,6 @@ $(function () {
     for (var l = count; l < (count + 3); l++) {
         getDataAndRender(l + 1);
         $(".row").last().append(holderContainer.replace(/1/g, (l + 1)));
-        }
+      }
     });
 });
