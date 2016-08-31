@@ -79,7 +79,7 @@ $(function () {
     });
 // click on Load more
     var holderContainer =
-    '<div class="holder"><div class="form"><div class="picture"><img src="http://pokeapi.co/media/sprites/pokemon/1.png"></div><div class="pokemon-name" id="pokemon-1"></div><div class="abilities" id="ability-1"></div><div class="hidden-info"></div></div></div>';
+    '<div class="holder"><div class="form"><div class="picture"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"></div><div class="pokemon-name" id="pokemon-1"></div><div class="abilities" id="ability-1"></div><div class="hidden-info"></div></div></div>';
   $('.button').click(function (e) {
         e.preventDefault();
     $(".row").last().after('<div class="row"></div>');
